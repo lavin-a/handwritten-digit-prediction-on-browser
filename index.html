@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MNIST recognition with MATLAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Hand-written digits recognition</h1>
+    <h2 class="subtitle">Using shallow network with WebAssembly generated from MATLAB</h2>
+    <div class="row">
+      <div class="column">
+        <canvas id="draw-area" width="450" height="450"></canvas>
+        <p class="control">
+          <a class="button" onclick="reset()">
+            Reset
+          </a>
+        </p>
+      </div>
+      <div class="column">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Number</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th>
+              <td class="accuracy" data-row-index="0">-</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td class="accuracy" data-row-index="1">-</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td class="accuracy" data-row-index="2">-</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td class="accuracy" data-row-index="3">-</td>
+            </tr>
+            <tr>
+              <th>4</th>
+              <td class="accuracy" data-row-index="4">-</td>
+            </tr>
+            <tr>
+              <th>5</th>
+              <td class="accuracy" data-row-index="5">-</td>
+            </tr>
+            <tr>
+              <th>6</th>
+              <td class="accuracy" data-row-index="6">-</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td class="accuracy" data-row-index="7">-</td>
+            </tr>
+            <tr>
+              <th>8</th>
+              <td class="accuracy" data-row-index="8">-</td>
+            </tr>
+            <tr>
+              <th>9</th>
+              <td class="accuracy" data-row-index="9">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row is-60">
+      <div class="field">
+        <input type="radio" name="algo" value="FCN">FCN
+        <p>Fully Convolutional Networks, or FCNs, are an architecture
+          used mainly for semantic segmentation. They employ solely locally
+          connected layers, such as convolution, pooling and upsampling.</p>
+        <br>
+        <input type="radio" name="algo" value="CNN" checked="checked">CNN
+        <p>In deep learning, a convolutional neural network (CNN, or ConvNet)
+          is a class of artificial neural network (ANN), most commonly applied
+          to analyze visual imagery.</p>
+      </div>
+      <br>
+      <p class="control">
+        <a id="predict-button" class="button is-link" onclick="prediction()">
+          Prediction
+        </a>
+      </p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+  <script async type="text/javascript" src="docs/js/digitPredictFcn.js"></script>
+
+  <script>
+    // init SignaturePad
+    const drawElement = document.getElementById('draw-area');
+    const signaturePad = new SignaturePad(drawElement, {
+      minWidth: 6,
+      maxWidth: 6,
+      penColor: 'white',
+      backgroundColor: 'black',
+    });
+
+    function getImageData() {
+      const inputWidth = inputHeight = 28;
+
+      // resize
+      const tmpCanvas = document.createElement('canvas').getContext('2d');
+      tmpCanvas.drawImage(drawElement, 0, 0, inputWidth, inputHeight);
+
+      // convert grayscale
+      let imageData = tmpCanvas.getImageData(0, 0, inputWidth, inputHeight);
+      for (let i = 0; i < imageData.data.length; i += 4) {
+        const avg = (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3;
+        imageData.data[i] = imageData.data[i + 1] = imageData.data[i + 2] = avg;
+      }
+
+      return imageData;
+    }
+
+    function getAccuracyScores(imageData, flag) {
+
+      let inputs = [];
+      let length = 28 * 28; // 28x28
+
+      for (let i = 0; i < length * 4; i = i + 4) {
+        inputs.push(imageData.data[i]);
+      }
+      console.log(inputs); // Create Data var
+
+      var Inputs = new Float64Array(inputs);
+      var Outputs = new Float64Array(10);
+      // Move Data to Heap var
+      var Inputsbytes = _arrayToHeap(Inputs);
+      var Outputsbytes = _arrayToHeap(Outputs);
+      // Run Function
+
+      Module._digitPredictFcn_initialize();
+      if (flag == 1) {
+        Module._digitPredictFcn_fcn(Inputsbytes.byteOffset, Outputsbytes.byteOffset)
+      } else if (flag == 2) {
+
+        Module._digitPredictFcn_CNN(Inputsbytes.byteOffset, Outputsbytes.byteOffset)
+
+      }
+      Module._digitPredictFcn_terminate();
+      // Copy Data from Heap 
+      Outputs = _heapToArray(Outputsbytes, Outputs);
+      var outputs = Array.from(Outputs);
+      // Free Data from Heap 
+      _freeArray(Inputsbytes);
+      _freeArray(Outputsbytes);
+      // Display Results
+      console.log(outputs);
+
+      const score = outputs;
+
+      return score;
+    }
+
+
+    function prediction() {
+
+      let checkValue = '';
+
+      let algoRadio = document.getElementsByName('algo');
+      let len = algoRadio.length;
+      for (let i = 0; i < len; i++) {
+        if (algoRadio.item(i).checked) {
+          checkValue = algoRadio.item(i).value;
+        }
+      }
+      console.log('Algo choice =' + checkValue);
+
+      let flag
+      if (checkValue == "FCN") {
+        flag = 1;
+      } else if (checkValue == "CNN") {
+        flag = 2;
+      }
+
+      const imageData = getImageData();
+      const accuracyScores = getAccuracyScores(imageData, flag);
+      const maxAccuracy = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
+
+      const elements = document.querySelectorAll(".accuracy");
+      elements.forEach(el => {
+        el.parentNode.classList.remove('is-selected');
+        const rowIndex = Number(el.dataset.rowIndex);
+        if (maxAccuracy === rowIndex) {
+          el.parentNode.classList.add('is-selected');
+        }
+        el.innerText = accuracyScores[rowIndex].toFixed(4);
+      })
+    }
+
+    function reset() {
+      signaturePad.clear();
+      let elements = document.querySelectorAll(".accuracy");
+      elements.forEach(el => {
+        el.parentNode.classList.remove('is-selected');
+        el.innerText = '-';
+      })
+    }
+  </script>
+
+  <script>
+    // JavaScript Array to Emscripten Heap
+    function _arrayToHeap(typedArray) {
+      var numBytes = typedArray.length * typedArray.BYTES_PER_ELEMENT;
+      var ptr = Module._malloc(numBytes);
+      var heapBytes = new Uint8Array(Module.HEAPU8.buffer, ptr, numBytes);
+      heapBytes.set(new Uint8Array(typedArray.buffer));
+      return heapBytes;
+    }
+    // Emscripten Heap to JavasSript Array
+    function _heapToArray(heapBytes, array) {
+      return new Float64Array(
+        heapBytes.buffer,
+        heapBytes.byteOffset,
+        heapBytes.length / array.BYTES_PER_ELEMENT);
+    }
+    // Free Heap
+    function _freeArray(heapBytes) {
+      Module._free(heapBytes.byteOffset);
+    }
+  </script>
+
+</body>
+
+</html>
