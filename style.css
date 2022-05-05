@@ -181,12 +181,14 @@ code {
 }
 
 hr {
-    background-color: #dbdbdb;
+    background-color: #303030;
     border: none;
     display: block;
     height: 1px;
     margin: 1.5rem 0
 }
+
+
 
 img {
     height: auto;
@@ -752,7 +754,7 @@ a.has-text-black:hover {
 
 a.has-text-light:focus,
 a.has-text-light:hover {
-    color: #dbdbdb !important
+    color: #303030 !important
 }
 
 .has-text-dark {
@@ -765,7 +767,7 @@ a.has-text-dark:hover {
 }
 
 .has-text-primary {
-    color: #00d1b2 !important
+    color: #1ABD65 !important
 }
 
 a.has-text-primary:focus,
@@ -843,7 +845,7 @@ a.has-text-danger:hover {
 }
 
 .has-text-grey-lighter {
-    color: #dbdbdb !important
+    color: #303030 !important
 }
 
 .has-text-white-ter {
@@ -1380,7 +1382,7 @@ a.box:active {
     -ms-flex-align: center;
     align-items: center;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 9px;
     -webkit-box-shadow: none;
     box-shadow: none;
     display: -webkit-inline-box;
@@ -1404,7 +1406,7 @@ a.box:active {
     -ms-user-select: none;
     user-select: none;
     background-color: #fff;
-    border-color: #dbdbdb;
+    border-color: #303030;
     color: #363636;
     cursor: pointer;
     -webkit-box-pack: center;
@@ -1927,7 +1929,7 @@ a.box:active {
 }
 
 .button.is-primary {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     border-color: transparent;
     color: #fff
 }
@@ -1959,7 +1961,7 @@ a.box:active {
 }
 
 .button.is-primary[disabled] {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none
@@ -1967,7 +1969,7 @@ a.box:active {
 
 .button.is-primary.is-inverted {
     background-color: #fff;
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .button.is-primary.is-inverted:hover {
@@ -1979,7 +1981,7 @@ a.box:active {
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .button.is-primary.is-loading:after {
@@ -1988,27 +1990,27 @@ a.box:active {
 
 .button.is-primary.is-outlined {
     background-color: transparent;
-    border-color: #00d1b2;
-    color: #00d1b2
+    border-color: #1ABD65;
+    color: #1ABD65
 }
 
 .button.is-primary.is-outlined:focus,
 .button.is-primary.is-outlined:hover {
-    background-color: #00d1b2;
-    border-color: #00d1b2;
+    background-color: #1ABD65;
+    border-color: #1ABD65;
     color: #fff
 }
 
 .button.is-primary.is-outlined.is-loading:after {
-    border-color: transparent transparent #00d1b2 #00d1b2 !important
+    border-color: transparent transparent #1ABD65 #1ABD65 !important
 }
 
 .button.is-primary.is-outlined[disabled] {
     background-color: transparent;
-    border-color: #00d1b2;
+    border-color: #1ABD65;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .button.is-primary.is-inverted.is-outlined {
@@ -2020,7 +2022,7 @@ a.box:active {
 .button.is-primary.is-inverted.is-outlined:focus,
 .button.is-primary.is-inverted.is-outlined:hover {
     background-color: #fff;
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .button.is-primary.is-inverted.is-outlined[disabled] {
@@ -2571,7 +2573,7 @@ a.box:active {
 
 .button[disabled] {
     background-color: #fff;
-    border-color: #dbdbdb;
+    border-color: #303030;
     -webkit-box-shadow: none;
     box-shadow: none;
     opacity: .5
@@ -2592,7 +2594,7 @@ a.box:active {
 .button.is-loading:after {
     -webkit-animation: spinAround .5s infinite linear;
     animation: spinAround .5s infinite linear;
-    border: 2px solid #dbdbdb;
+    border: 2px solid #303030;
     border-radius: 290486px;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -2609,7 +2611,7 @@ a.box:active {
 
 .button.is-static {
     background-color: #f5f5f5;
-    border-color: #dbdbdb;
+    border-color: #303030;
     color: #7a7a7a;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -2822,7 +2824,7 @@ a.box:active {
 
 .content blockquote {
     background-color: #f5f5f5;
-    border-left: 5px solid #dbdbdb;
+    border-left: 5px solid #303030;
     padding: 1.25em 1.5em
 }
 
@@ -2892,7 +2894,7 @@ a.box:active {
 
 .content table td,
 .content table th {
-    border: 1px solid #dbdbdb;
+    border: 1px solid #303030;
     border-width: 0 0 1px;
     padding: .5em .75em;
     vertical-align: top
@@ -2963,7 +2965,7 @@ a.box:active {
     position: relative;
     vertical-align: top;
     background-color: #fff;
-    border-color: #dbdbdb;
+    border-color: #303030;
     color: #363636;
     -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
     box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
@@ -3132,7 +3134,7 @@ a.box:active {
 
 .input.is-primary,
 .textarea.is-primary {
-    border-color: #00d1b2
+    border-color: #1ABD65
 }
 
 .input.is-primary.is-active,
@@ -3386,7 +3388,7 @@ a.box:active {
     position: relative;
     vertical-align: top;
     background-color: #fff;
-    border-color: #dbdbdb;
+    border-color: #303030;
     color: #363636;
     cursor: pointer;
     display: block;
@@ -3534,7 +3536,7 @@ a.box:active {
 }
 
 .select.is-primary select {
-    border-color: #00d1b2
+    border-color: #1ABD65
 }
 
 .select.is-primary select.is-active,
@@ -3633,7 +3635,7 @@ a.box:active {
 .select.is-loading::after {
     -webkit-animation: spinAround .5s infinite linear;
     animation: spinAround .5s infinite linear;
-    border: 2px solid #dbdbdb;
+    border: 2px solid #303030;
     border-radius: 290486px;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -3793,7 +3795,7 @@ a.box:active {
 }
 
 .file.is-primary .file-cta {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     border-color: transparent;
     color: #fff
 }
@@ -4151,7 +4153,7 @@ a.box:active {
     padding-top: calc(.375em - 1px);
     position: relative;
     vertical-align: top;
-    border-color: #dbdbdb;
+    border-color: #303030;
     border-radius: 3px;
     font-size: 1em;
     padding-left: 1em;
@@ -4181,7 +4183,7 @@ a.box:active {
 }
 
 .file-name {
-    border-color: #dbdbdb;
+    border-color: #303030;
     border-style: solid;
     border-width: 1px 1px 1px 0;
     display: block;
@@ -4256,7 +4258,7 @@ a.box:active {
 }
 
 .help.is-primary {
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .help.is-link {
@@ -4537,7 +4539,7 @@ print {
 }
 
 .control.has-icon .icon {
-    color: #dbdbdb;
+    color: #303030;
     height: 2.25em;
     pointer-events: none;
     position: absolute;
@@ -4608,7 +4610,7 @@ print {
 
 .control.has-icons-left .icon,
 .control.has-icons-right .icon {
-    color: #dbdbdb;
+    color: #303030;
     height: 2.25em;
     pointer-events: none;
     position: absolute;
@@ -4638,7 +4640,7 @@ print {
 .control.is-loading::after {
     -webkit-animation: spinAround .5s infinite linear;
     animation: spinAround .5s infinite linear;
-    border: 2px solid #dbdbdb;
+    border: 2px solid #303030;
     border-radius: 290486px;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -4842,7 +4844,7 @@ print {
 }
 
 .notification.is-primary {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -4888,7 +4890,7 @@ print {
 }
 
 .progress::-webkit-progress-bar {
-    background-color: #dbdbdb
+    background-color: #303030
 }
 
 .progress::-webkit-progress-value {
@@ -4953,15 +4955,15 @@ print {
 }
 
 .progress.is-primary::-webkit-progress-value {
-    background-color: #00d1b2
+    background-color: #1ABD65
 }
 
 .progress.is-primary::-moz-progress-bar {
-    background-color: #00d1b2
+    background-color: #1ABD65
 }
 
 .progress.is-primary::-ms-fill {
-    background-color: #00d1b2
+    background-color: #1ABD65
 }
 
 .progress.is-link::-webkit-progress-value {
@@ -5044,8 +5046,8 @@ print {
 
 .table td,
 .table th {
-    border: 1px solid #dbdbdb;
-    border-width: 0 0 1px;
+    border: 1px solid #303030;
+    border-width: 0 0 0.5px;
     padding: .5em .75em;
     vertical-align: top
 }
@@ -5080,8 +5082,8 @@ print {
 
 .table td.is-primary,
 .table th.is-primary {
-    background-color: #00d1b2;
-    border-color: #00d1b2;
+    background-color: #1ABD65;
+    border-color: #1ABD65;
     color: #fff
 }
 
@@ -5128,7 +5130,7 @@ print {
 
 .table td.is-selected,
 .table th.is-selected {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -5145,7 +5147,7 @@ print {
 }
 
 .table tr.is-selected {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -5162,7 +5164,7 @@ print {
 
 .table thead td,
 .table thead th {
-    border-width: 0 0 2px;
+    border-width: 0 0 1px;
     color: #363636
 }
 
@@ -5324,7 +5326,7 @@ print {
 }
 
 .tag:not(body).is-primary {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -5413,7 +5415,7 @@ print {
 }
 
 .tag:not(body).is-delete:active {
-    background-color: #dbdbdb
+    background-color: #303030
 }
 
 .tag:not(body).is-rounded {
@@ -5669,7 +5671,7 @@ a.tag:hover {
 .loader {
     -webkit-animation: spinAround .5s infinite linear;
     animation: spinAround .5s infinite linear;
-    border: 2px solid #dbdbdb;
+    border: 2px solid #303030;
     border-radius: 290486px;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -5898,7 +5900,7 @@ a.tag:hover {
 }
 
 .card-footer {
-    border-top: 1px solid #dbdbdb;
+    border-top: 1px solid #303030;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
@@ -5928,7 +5930,7 @@ a.tag:hover {
 }
 
 .card-footer-item:not(:last-child) {
-    border-right: 1px solid #dbdbdb
+    border-right: 1px solid #303030
 }
 
 .card .media:not(:last-child) {
@@ -6004,7 +6006,7 @@ a.dropdown-item.is-active {
 }
 
 .dropdown-divider {
-    background-color: #dbdbdb;
+    background-color: #303030;
     border: none;
     display: block;
     height: 1px;
@@ -6293,7 +6295,7 @@ print {
 }
 
 .menu-list li ul {
-    border-left: 1px solid #dbdbdb;
+    border-left: 1px solid #303030;
     margin: .75em;
     padding-left: .75em
 }
@@ -6405,12 +6407,12 @@ print {
 }
 
 .message.is-primary .message-header {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
 .message.is-primary .message-body {
-    border-color: #00d1b2;
+    border-color: #1ABD65;
     color: #021310
 }
 
@@ -6518,7 +6520,7 @@ print {
 }
 
 .message-body {
-    border: 1px solid #dbdbdb;
+    border: 1px solid #303030;
     border-radius: 3px;
     color: #4a4a4a;
     padding: 1em 1.25em
@@ -6713,7 +6715,7 @@ print {
 }
 
 .modal-card-head {
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #303030;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px
 }
@@ -6732,7 +6734,7 @@ print {
 .modal-card-foot {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-top: 1px solid #dbdbdb
+    border-top: 1px solid #303030
 }
 
 .modal-card-foot .button:not(:last-child) {
@@ -6998,7 +7000,7 @@ print {
 }
 
 .navbar.is-primary {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -7052,7 +7054,7 @@ print {
     }
 
     .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
-        background-color: #00d1b2;
+        background-color: #1ABD65;
         color: #fff
     }
 }
@@ -7569,7 +7571,7 @@ a.navbar-link:hover {
 }
 
 .navbar-divider {
-    background-color: #dbdbdb;
+    background-color: #303030;
     border: none;
     display: none;
     height: 1px;
@@ -7705,7 +7707,7 @@ a.navbar-link:hover {
     }
 
     .navbar-item.has-dropdown-up .navbar-dropdown {
-        border-bottom: 1px solid #dbdbdb;
+        border-bottom: 1px solid #303030;
         border-radius: 5px 5px 0 0;
         border-top: none;
         bottom: 100%;
@@ -7772,7 +7774,7 @@ a.navbar-link:hover {
         background-color: #fff;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        border-top: 1px solid #dbdbdb;
+        border-top: 1px solid #303030;
         -webkit-box-shadow: 0 8px 8px rgba(10, 10, 10, .1);
         box-shadow: 0 8px 8px rgba(10, 10, 10, .1);
         display: none;
@@ -8000,7 +8002,7 @@ a.navbar-link:hover {
 .pagination-link,
 .pagination-next,
 .pagination-previous {
-    border-color: #dbdbdb;
+    border-color: #303030;
     color: #363636;
     min-width: 2.25em
 }
@@ -8028,8 +8030,8 @@ a.navbar-link:hover {
 .pagination-link[disabled],
 .pagination-next[disabled],
 .pagination-previous[disabled] {
-    background-color: #dbdbdb;
-    border-color: #dbdbdb;
+    background-color: #303030;
+    border-color: #303030;
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #7a7a7a;
@@ -8171,15 +8173,15 @@ print {
 .panel-block,
 .panel-heading,
 .panel-tabs {
-    border-bottom: 1px solid #dbdbdb;
-    border-left: 1px solid #dbdbdb;
-    border-right: 1px solid #dbdbdb
+    border-bottom: 1px solid #303030;
+    border-left: 1px solid #303030;
+    border-right: 1px solid #303030
 }
 
 .panel-block:first-child,
 .panel-heading:first-child,
 .panel-tabs:first-child {
-    border-top: 1px solid #dbdbdb
+    border-top: 1px solid #303030
 }
 
 .panel-heading {
@@ -8206,7 +8208,7 @@ print {
 }
 
 .panel-tabs a {
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #303030;
     margin-bottom: -1px;
     padding: .5em
 }
@@ -8322,7 +8324,7 @@ label.panel-block:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-bottom-color: #dbdbdb;
+    border-bottom-color: #303030;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     color: #4a4a4a;
@@ -8355,7 +8357,7 @@ label.panel-block:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-bottom-color: #dbdbdb;
+    border-bottom-color: #303030;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     display: -webkit-box;
@@ -8420,12 +8422,12 @@ label.panel-block:hover {
 
 .tabs.is-boxed a:hover {
     background-color: #f5f5f5;
-    border-bottom-color: #dbdbdb
+    border-bottom-color: #303030
 }
 
 .tabs.is-boxed li.is-active a {
     background-color: #fff;
-    border-color: #dbdbdb;
+    border-color: #303030;
     border-bottom-color: transparent !important
 }
 
@@ -8438,7 +8440,7 @@ label.panel-block:hover {
 }
 
 .tabs.is-toggle a {
-    border-color: #dbdbdb;
+    border-color: #303030;
     border-style: solid;
     border-width: 1px;
     margin-bottom: 0;
@@ -10922,7 +10924,7 @@ print {
 }
 
 .hero.is-primary {
-    background-color: #00d1b2;
+    background-color: #1ABD65;
     color: #fff
 }
 
@@ -10946,7 +10948,7 @@ print {
 
 @media screen and (max-width:1023px) {
     .hero.is-primary .navbar-menu {
-        background-color: #00d1b2
+        background-color: #1ABD65
     }
 }
 
@@ -10992,16 +10994,16 @@ print {
 .hero.is-primary .tabs.is-toggle li.is-active a:hover {
     background-color: #fff;
     border-color: #fff;
-    color: #00d1b2
+    color: #1ABD65
 }
 
 .hero.is-primary.is-bold {
-    background-image: linear-gradient(141deg, #009e6c 0, #00d1b2 71%, #00e7eb 100%)
+    background-image: linear-gradient(141deg, #009e6c 0, #1ABD65 71%, #00e7eb 100%)
 }
 
 @media screen and (max-width:768px) {
     .hero.is-primary.is-bold .navbar-menu {
-        background-image: linear-gradient(141deg, #009e6c 0, #00d1b2 71%, #00e7eb 100%)
+        background-image: linear-gradient(141deg, #009e6c 0, #1ABD65 71%, #00e7eb 100%)
     }
 }
 
@@ -11570,5 +11572,3 @@ print {
     background-color: #f5f5f5;
     padding: 3rem 1.5rem 6rem
 }
-
-/*# sourceMappingURL=bulma.min.css.map */
