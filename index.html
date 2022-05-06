@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container is-qhd">
     <h1 class="title">Hand-written digits recognition</h1>
     <h2 class="subtitle">Using shallow network with WebAssembly generated from MATLAB</h2>
     <div class="row">
@@ -74,26 +74,27 @@
           </tbody>
         </table>
       </div>
-    </div>
-    <div class="row is-60">
-      <div class="field">
-        <input type="radio" name="algo" value="FCN">FCN
-        <p>Fully Convolutional Networks, or FCNs, are an architecture
-          used mainly for semantic segmentation. They employ solely locally
-          connected layers, such as convolution, pooling and upsampling.</p>
+      <div class="column is-5">
+        <div class="field">
+          <input type="radio" name="algo" value="FCN">FCN
+          <p>Fully Convolutional Networks, or FCNs, are an architecture
+            used mainly for semantic segmentation. They employ solely locally
+            connected layers, such as convolution, pooling and upsampling.</p>
+          <br>
+          <input type="radio" name="algo" value="CNN" checked="checked">CNN
+          <p>In deep learning, a convolutional neural network (CNN, or ConvNet)
+            is a class of artificial neural network (ANN), most commonly applied
+            to analyze visual imagery.</p>
+        </div>
         <br>
-        <input type="radio" name="algo" value="CNN" checked="checked">CNN
-        <p>In deep learning, a convolutional neural network (CNN, or ConvNet)
-          is a class of artificial neural network (ANN), most commonly applied
-          to analyze visual imagery.</p>
+        <p class="control">
+          <a id="predict-button" class="button is-link" onclick="prediction()">
+            Prediction
+          </a>
+        </p>
       </div>
-      <br>
-      <p class="control">
-        <a id="predict-button" class="button is-link" onclick="prediction()">
-          Prediction
-        </a>
-      </p>
     </div>
+    
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
   <script async type="text/javascript" src="docs/js/digitPredictFcn.js"></script>
@@ -107,6 +108,10 @@
       penColor: 'white',
       backgroundColor: 'black',
     });
+
+
+    
+    
 
     function getImageData() {
       const inputWidth = inputHeight = 28;
